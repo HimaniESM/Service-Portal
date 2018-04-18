@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>da5146266f55df00d69dc8c17c3ee4b7</documentkey>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;record_update sys_domain="global" table="kb_knowledge"&gt;
+    &lt;kb_knowledge action="INSERT_OR_UPDATE"&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;article_type&gt;text&lt;/article_type&gt;
+        &lt;author display_value="Divya_M"&gt;4453ceaa6fb01300d69dc8c17c3ee4cc&lt;/author&gt;
+        &lt;can_read_user_criteria/&gt;
+        &lt;cannot_read_user_criteria/&gt;
+        &lt;category/&gt;
+        &lt;cmdb_ci/&gt;
+        &lt;description/&gt;
+        &lt;direct&gt;false&lt;/direct&gt;
+        &lt;disable_commenting&gt;false&lt;/disable_commenting&gt;
+        &lt;disable_suggesting&gt;false&lt;/disable_suggesting&gt;
+        &lt;display_attachments&gt;false&lt;/display_attachments&gt;
+        &lt;flagged&gt;false&lt;/flagged&gt;
+        &lt;image/&gt;
+        &lt;kb_category display_value="General"&gt;34c1f2b24fb8130053c240f18110c79a&lt;/kb_category&gt;
+        &lt;kb_knowledge_base display_value="Knowledge"&gt;dfc19531bf2021003f07e2c1ac0739ab&lt;/kb_knowledge_base&gt;
+        &lt;meta/&gt;
+        &lt;number&gt;KB0010140&lt;/number&gt;
+        &lt;published/&gt;
+        &lt;rating&gt;5&lt;/rating&gt;
+        &lt;retired/&gt;
+        &lt;roles/&gt;
+        &lt;short_description&gt;ESM Cafe Meet an Expert&lt;/short_description&gt;
+        &lt;source/&gt;
+        &lt;sys_class_name&gt;kb_knowledge&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;Divya_M&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2018-04-09 05:34:07&lt;/sys_created_on&gt;
+        &lt;sys_domain&gt;global&lt;/sys_domain&gt;
+        &lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;
+        &lt;sys_id&gt;da5146266f55df00d69dc8c17c3ee4b7&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;Divya_M&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2018-04-09 05:36:58&lt;/sys_updated_on&gt;
+        &lt;sys_view_count&gt;2&lt;/sys_view_count&gt;
+        &lt;text&gt;&lt;![CDATA[&lt;div style="text-align: center; font-size: 24pt; font-family: andalus; background-color: #004563; height: 50px; color: #ffffff;"&gt;&lt;strong&gt;ESM Cafe Meet an Expert&lt;/strong&gt;&lt;/div&gt;
+&lt;p style="font-size: 12pt; font-family: Myriad Pro,Sans-serif; color: #190000;"&gt; &lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size: 12pt;"&gt;Meet an Expert is an advanced solution to cater the most common issue of any enterprise ,i.e., giving the employees a platform to schedule an appointment with the various desks at any suitable slot. This solution targets at providing a an exquisite user experience using the interactive Natural Language Form which is unlike any other solution. This solution also provides a platform to the Desk Agents, to see all the appointments assigned to their groups and assign any to themselves. And also, options to check the appointments assigned to themselves. Once an appointment is assigned, corresponding tasks are triggered.&lt;/span&gt;&lt;/p&gt;
+&lt;p style="font-size: 12pt; font-family: Myriad Pro,Sans-serif; color: #190000;"&gt;&lt;strong style="font-size: 14pt; font-family: andalus; color: #190000;"&gt;ESM Cafe Meet an Expert Version Compatability&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li style="font-size: 12pt; font-family: Myriad Pro,Sans-serif; color: #190000;"&gt;Istanbul&lt;/li&gt;&lt;li style="font-size: 12pt; font-family: Myriad Pro,Sans-serif; color: #190000;"&gt;Helsinki&lt;/li&gt;&lt;li style="font-size: 12pt; font-family: Myriad Pro,Sans-serif; color: #190000;"&gt;Geneva&lt;/li&gt;&lt;li style="font-size: 12pt; font-family: Myriad Pro,Sans-serif; color: #190000;"&gt;Fuji&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;strong style="font-size: 14pt; font-family: andalus; color: #190000;"&gt;Version Control&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li style="font-size: 12pt; font-family: Myriad Pro,Sans-serif; color: #190000;"&gt;Release 1&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a style="font-size: 13pt; font-family: Myriad Pro,Sans-serif; color: #190000;" title="Meet an Expert" href="https://esmcafe.service-now.com/meet_expert" target="_blank" rel="nofollow"&gt;Visit the app -&amp;gt; Link&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;table style="border: 1px dashed #bbbbbb;"&gt;&lt;tbody style="border: 0px;"&gt;&lt;tr style="border: 0px;"&gt;&lt;td style="border: 1px dashed #bbbbbb;" width="1500"&gt;
+&lt;p&gt;&lt;strong style="font-size: 13pt; font-family: Myriad Pro,Sans-serif; color: #190000;"&gt;Infosys Values adds&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #000000; font-family: arial, helvetica, sans-serif; font-size: medium;"&gt;ESM Cafe is enabled with following Infosys recommended additional capabilities &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li style="font-size: 12pt; font-family: Myriad Pro,Sans-serif; color: #190000;"&gt;
+&lt;ul&gt;&lt;li&gt;Emails in form of Meeting Invites will be sent to the requestor as well as the assignee, thus blocking the calendar both ways.&lt;/li&gt;&lt;li&gt;User Friendly &amp;amp; proactive Use interface.&lt;/li&gt;&lt;li&gt;Same solution caters to both the end user as well as the Service Desks.&lt;/li&gt;&lt;li&gt;Option to add Reference Incident Number corresponding to any Appointment.&lt;/li&gt;&lt;li&gt;User can see the Agent’s comments for the appointment.&lt;/li&gt;&lt;li&gt;An agent can check, open un-assigned appointments, appointments assigned to Self, and open tasks for the assigned/ongoing appointments.&lt;/li&gt;&lt;/ul&gt;
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;&lt;img style="align: baseline;" title="" src="meet.jpgx" alt="" align="baseline" border="" hspace="" vspace="" /&gt;&lt;/p&gt;
+&lt;div style="height: 30px; background-color: #004563;"&gt; &lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;]]&gt;&lt;/text&gt;
+        &lt;topic&gt;General&lt;/topic&gt;
+        &lt;use_count&gt;0&lt;/use_count&gt;
+        &lt;valid_to&gt;2019-04-08&lt;/valid_to&gt;
+        &lt;wiki/&gt;
+        &lt;workflow_state&gt;review&lt;/workflow_state&gt;
+        &lt;x_infte_esm_it_kno_knowledge_reviewer display_value="Divya_M"&gt;20cb2e264fb0130053c240f18110c7b2&lt;/x_infte_esm_it_kno_knowledge_reviewer&gt;
+    &lt;/kb_knowledge&gt;
+    &lt;sys_translated_text action="delete_multiple" query="documentkey=da5146266f55df00d69dc8c17c3ee4b7"/&gt;
+&lt;/record_update&gt;
+</payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-04-09 09:22:11</sys_created_on>
+        <sys_id>11b57a666fd5df00d69dc8c17c3ee458</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>KB0010140</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_metadata_link_11b57a666fd5df00d69dc8c17c3ee458</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-04-09 09:22:11</sys_updated_on>
+        <tablename>kb_knowledge</tablename>
+    </sys_metadata_link>
+</record_update>

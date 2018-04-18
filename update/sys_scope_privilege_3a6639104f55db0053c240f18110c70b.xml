@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>read</operation>
+        <source_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>Amit Kumar</sys_created_by>
+        <sys_created_on>2018-04-02 04:59:20</sys_created_on>
+        <sys_id>3a6639104f55db0053c240f18110c70b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_incident_feedback</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_scope_privilege_3a6639104f55db0053c240f18110c70b</sys_update_name>
+        <sys_updated_by>Amit Kumar</sys_updated_by>
+        <sys_updated_on>2018-04-02 04:59:20</sys_updated_on>
+        <target_name>u_incident_feedback</target_name>
+        <target_scope display_value="ESM_Service_Portal_Global">ccabb9f74ff4930053c240f18110c74e</target_scope>
+        <target_type>sys_db_object</target_type>
+    </sys_scope_privilege>
+</record_update>

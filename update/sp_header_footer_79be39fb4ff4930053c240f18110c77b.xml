@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope, $scope, snRecordWatcher, spUtil, $location, $uibModal, cabrillo, $timeout, $window) {
+  /* widget controller */
+  var c = this;
+	$scope.persona=$scope.user.u_persona;
+	
+	/************* Background Image *************/
+	document.body.style.backgroundImage = "url(" + $scope.data.bgUrl + ")";
+	/************* End of Background Image *************/	
+	
+	/********** Guided Tour ***********/
+	
+	$scope.guidedTour = function(){
+		
+			$rootScope.$broadcast('guidedTour', {});
+		
+	}
+	/**********End of Guided Tour *******/
+	
+	$scope.avatarProfile = {
+		userID: $scope.user.sys_id,
+		name: $scope.user.name,
+		initials: $window.NOW.user_initials
+	};
+	
+	if ($window.NOW.user_avatar) {
+		$scope.avatarProfile.userImage = $window.NOW.user_avatar;
+	}
+
+	if (cabrillo.isNative())
+		$scope.isViewNative = true;
+
+	$scope.openPopUp = function() {
+		var url = "$chat_support.do?queueID=" + $scope.data.connect_support_queue_id;
+		var popup = window.open (url, "popup", "width=900, height=600");
+	};
+
+	$scope.openLogin = function () {
+		$scope.modalInstance = $uibModal.open({
+			templateUrl: 'modalLogin',
+			scope: $scope
+		});
+	};
+
+	var xsScreenSize = isXSScreenSize();
+	$scope.showXSAvatar = isXSScreenSize();
+	$scope.showAvatar = !isXSScreenSize();
+	
+	angular.element($window).on('resize', function () {
+		if(xsScreenSize !== isXSScreenSize() && (!$scope.showXSAvatar || !$scope.showAvatar)){
+			$scope.showXSAvatar = true;
+			$scope.showAvatar = true;
+		}	   
+	});
+	
+	
+	function isXSScreenSize() {
+		return $window.matchMedia('(max-width: 767px)').matches;
+	}
+	
+	$rootScope.$on('sp.avatar_changed', function() {
+		$scope.userID = "";
+		$timeout(function(){
+			$scope.userID = $scope.user.sys_id;
+		});
+	});
+	
+	
+	$scope.myFunction = function(){		
+		 $rootScope.$broadcast('feedback', {});
+	} 
+	
+  $scope.openChat=function(){
+		
+		$window.open('/$chat_support.do?queueID=73fcd8a24fc9d70053c240f18110c730', 'window', 'location=no,toolbar=no,menubar=yes,scrollbars=no,width=400,height=360');
+		
+	} 
+	
+	
+
+	$scope.isHomepage = function() {
+		if (!$scope.page.id)
+			return true;
+
+		if ($scope.page.id == $scope.portal.homepage_dv)
+			return true;
+
+		return false;
+	};
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@media (min-width: 1200px)
+.container {
+    width: 1170px;
+}
+.container {
+   	width : 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    margin-left: -0.75%;
+    margin-right: -1.5%;
+}
+
+
+ @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+  .sc-text{
+   margin-top:-20px 
+  }
+}
+HTML[data-doctype=true] BODY {
+    color: #343d47;
+  //color:red;
+    margin: 0;
+}
+body {
+    font-family: calibri;
+    line-height: 1.42857143;
+}
+
+@media only screen and (max-width: 500px){ 
+  #linktestID{
+  margin-top : -25px;
+		background: transparent; /* fallback for old browsers */
+		
+	}
+}
+
+
+@media only screen and (min-width: 501px){
+  #linktestID{
+  margin-top : -45px;
+		background: transparent; /* fallback for old browsers */
+		
+	}
+
+}
+		
+.page-heading, .page-heading-contact {
+  width : 100%;
+}
+
+
+.inline-link-list {
+    font-size: 0;
+    list-style: none;
+    margin: 0 auto;
+  	padding : 3%;
+}
+
+ menu, dir {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+.footer-nav-links li:first-child {
+    padding-left: 0;
+}
+
+.footer-nav-links li {
+    padding: 0 0 0 0.5%;
+  
+}
+
+.inline-link-list li {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.footer-nav-links li a{
+  
+  color:#fff;
+  
+  font-family: calibri;
+  font-size: 20px;
+  font-weight : bold;
+}
+
+.heading{
+  margin-top:5px;
+  margin-bottom:5px;
+  font-family: calibri;
+}
+
+
+li{
+  font-family: calibri;
+}
+
+ 
+ .nav .open &gt; a, .nav .open &gt; a:hover, .nav .open &gt; a:focus {
+    background-color: transparent;
+    border-color: #428bca;
+}
+ .dropdown-menu li a{
+  color:#730000 !important;
+  line-height:20px;
+  padding-top:10px
+}
+.dropdown-menu{
+ background-color:rgba(202, 197, 197,0.8);
+}
+.text-muted{
+  color : #5d5454;
+}
+ 
+.nav1{
+  
+	height:30px;
+  color:#717171;
+  font-size:12px;
+ 	background:rgba(0,0,0,0.6);
+  width:100%;
+
+}
+ .navbar &gt; li &gt; a {padding-top:5px !important; padding-bottom:0px !important;}
+.navbar {min-height:45px !important; }
+}
+
+.nav1 ul{
+  margin-top:-10px;
+}
+.nav1 ul li a{
+  //color:#bdbaba;
+  color:black;
+  font-size: 14px;
+    font-weight: 600;
+ }
+
+.divider {
+    position: absolute;
+    right:-1px;
+    top:20px;
+}
+
+
+
+
+
+.nav1 ul li a:hover{
+ color:black; 
+  background-color:transparent;
+   cursor:hand;
+}
+
+.footer-nav{
+  margin-top:3%;
+}
+ 
+.logo{
+  
+  padding-left : 10.5% !important;
+}
+
+.list{
+  padding-right : 10%;
+}
+*/
+
+////cart button styling ///
+
+.nav1 .btn-group &gt; a {
+    margin-top: 0px !important;
+    color: #717171 !important;
+}
+
+/*************************************Top News Scroller *********************************/
+.page-heading #scrollNews{
+  background-color : #ffffff;
+  opacity : 0.6;
+  margin-right:-15px;
+ 
+}
+
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.marquee ul {
+    display: inline-block;
+    padding-left: 100%;
+    animation: move 25s linear infinite;
+}
+@keyframes move {
+    0%   { transform: translate(0, 0); !important}
+    100% { transform: translate(-100%, 0); !important}
+}*/
+
+/////////////------OOB Styling------------//////////////
+
+nav{
+ margin-bottom: 0px;
+ border-radius: 0px;
+}
+
+header[role="banner"],
+.nav &gt; li &gt; a {
+  max-height: 60px;
+}
+
+@media screen and (max-width: 768px){
+  .nav &gt; li &gt; a {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
+
+.navbar-nav {
+margin: 0px;
+}
+
+// PRB711244: Dropdown menu is scrollable when too many items
+.scrollable-dropdown {
+  max-height: 80vh;
+  overflow: auto;
+  height: auto;
+}
+
+.is-native {
+ .scrollable-dropdown {
+  max-height: 100vh;
+  overflow: scroll;
+  height: auto;
+	}
+}
+
+.navbar-brand {
+  max-height: 30px;
+  padding: 0;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand img, .navbar-brand span {
+  margin-left: $sp-logo-margin-x;
+  margin-right: $sp-logo-margin-x;
+  margin-top: $sp-logo-margin-y;
+  margin-bottom: $sp-logo-margin-y;
+  display: block;
+  max-height: $sp-logo-max-height;
+  max-width: $sp-logo-max-width;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.pguide
+{
+    background-image: url('portal_guide_image.png');
+    background-repeat: no-repeat;
+    //background-size: 40px 20px;
+  background-size: contain;
+    margin-top:10px;
+  width:60px;
+  height:40px
+}
+
+.home
+{
+    background-image: url('home_esm.png');
+    background-repeat: no-repeat;
+    //background-size: 40px 20px;
+  background-size: contain;
+    margin-top:10px;
+  width:40px;
+  height:10px
+}
+
+
+
+// -------- SIDE BAR NAVIGATIONS---------------
+
+
+
+
+.animate {
+		-webkit-transition: all 0.6s ease-in-out;
+		-moz-transition: all 0.6s ease-in-out;
+		-o-transition: all 0.6s ease-in-out;
+		-ms-transition: all 0.6s ease-in-out;
+		transition: all 0.6s ease-in-out;
+	}
+
+	.navbar-fixed-right {
+		position: fixed;
+		top: 0px;
+		right: 0px;
+		border-radius: 0px;
+	}
+
+	.navbar-minimal {
+		width: 40px;		
+		min-height: 40px;
+		max-height: 50%;
+		background-color: rgb(51, 51, 51);
+		background-color: rgba(51, 51, 51, 0.8);
+		border-width: 0px;
+		z-index: 1000;
+	}
+
+	.navbar-minimal &gt; .navbar-toggler {
+		position: relative;
+		min-height: 40px;
+		border-bottom: 1px solid rgb(81, 81, 81);
+		z-index: 100;
+		cursor: pointer;
+	}
+
+	.navbar-minimal.open &gt; .navbar-toggler,
+	.navbar-minimal &gt; .navbar-toggler:hover {
+		//background-color: rgb(158, 202, 59);
+    background-color:rgb(0,128,0);
+	}
+
+	.navbar-minimal &gt; .navbar-toggler &gt; span {
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		margin: -8px -8px 0 0;
+		width: 15px;
+		height: 15px;
+		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjMycHgiIHZpZXdCb3g9IjAgMCAxNiAzMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTYgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGRkZGRiIgZD0iTTEsN2gxNGMwLjU1MiwwLDEsMC40NDgsMSwxcy0wLjQ0OCwxLTEsMUgxQzAuNDQ4LDksMCw4LjU1MiwwLDgKCVMwLjQ0OCw3LDEsN3oiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xLDEyaDE0YzAuNTUyLDAsMSwwLjQ0OCwxLDFzLTAuNDQ4LDEtMSwxSDFjLTAuNTUyLDAtMS0wLjQ0OC0xLTEKCVMwLjQ0OCwxMiwxLDEyeiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGRkZGRiIgZD0iTTEsMmgxNGMwLjU1MiwwLDEsMC40NDgsMSwxcy0wLjQ0OCwxLTEsMUgxQzAuNDQ4LDQsMCwzLjU1MiwwLDMKCVMwLjQ0OCwyLDEsMnoiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xLjMzLDI4Ljk3bDExLjY0LTExLjY0YzAuNDU5LTAuNDU5LDEuMjA0LTAuNDU5LDEuNjYzLDAKCWMwLjQ1OSwwLjQ1OSwwLjQ1OSwxLjIwNCwwLDEuNjYzTDIuOTkzLDMwLjYzM2MtMC40NTksMC40NTktMS4yMDQsMC40NTktMS42NjMsMEMwLjg3MSwzMC4xNzQsMC44NzEsMjkuNDMsMS4zMywyOC45N3oiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yLjk5MywxNy4zM2wxMS42NDEsMTEuNjRjMC40NTksMC40NTksMC40NTksMS4yMDQsMCwxLjY2MwoJcy0xLjIwNCwwLjQ1OS0xLjY2MywwTDEuMzMsMTguOTkzYy0wLjQ1OS0wLjQ1OS0wLjQ1OS0xLjIwNCwwLTEuNjYzQzEuNzg5LDE2Ljg3MSwyLjUzNCwxNi44NzEsMi45OTMsMTcuMzN6Ii8+Cjwvc3ZnPgo=);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		-webkit-transition: -webkit-transform .3s ease-out 0s;
+		-moz-transition: -moz-transform .3s ease-out 0s;
+		-o-transition: -moz-transform .3s ease-out 0s;
+		-ms-transition: -ms-transform .3s ease-out 0s;
+		transition: transform .3s ease-out 0s;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	.navbar-minimal &gt; .navbar-menu {
+		position: absolute;
+		top: -1000px;
+		left: 0px;
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		z-index: 50;
+		background-color: rgb(51, 51, 51);
+		background-color: rgba(51, 51, 51, 0.8);
+	}
+	.navbar-minimal &gt; .navbar-menu &gt; li {
+		margin: 0px;
+		padding: 0px;
+		border-width: 0px;
+		height: 54px;
+	}
+	.navbar-minimal &gt; .navbar-menu &gt; li &gt; a {
+		position: relative;
+		display: inline-block;
+		color: rgb(255, 255, 255);
+		padding: 20px 10px;
+		text-align: left;
+		cursor: pointer;
+		border-bottom: 1px solid rgb(81, 81, 81);
+		width: 100%;
+		text-decoration: none;
+		margin: 0px;
+	}
+
+	.navbar-minimal &gt; .navbar-menu &gt; li &gt; a:last-child {
+		border-bottom-width: 0px;
+	}
+	.navbar-minimal &gt; .navbar-menu &gt; li &gt; a:hover {
+		//background-color: rgb(158, 202, 59);
+    background-color:rgb(0,128,0)
+	}
+	.navbar-minimal &gt; .navbar-menu &gt; li &gt; a &gt; .glyphicon {
+		float: right;
+	}
+
+	.navbar-minimal.open {
+		width: 320px;
+	}
+
+	.navbar-minimal.open &gt; .navbar-toggler &gt; span {
+		background-position: 0 -16px;
+		-webkit-transform: rotate(-180deg);
+		-moz-transform: rotate(-180deg);
+		-o-transform: rotate(-180deg);
+		-ms-transform: rotate(-180deg);
+		transform: rotate(-180deg);
+	}
+
+	.navbar-minimal.open &gt; .navbar-menu {
+		top: 60px;
+		width: 100%;
+		min-height: 100%;
+	}
+
+	@media (min-width: 768px) {
+		.navbar-minimal.open {
+			width: 60px;
+		}
+		.navbar-minimal.open &gt; .navbar-menu {
+			overflow: visible;
+		}
+		.navbar-minimal &gt; .navbar-menu &gt; li &gt; a &gt; .desc {
+			position: absolute;
+			display: inline-block;
+			top: 50%;
+			right: 130px;
+			margin-top: -30px;
+			margin-left: 20px;
+			text-align: left;
+			white-space: nowrap;
+			padding: 20px 13px;
+     // margin-top:-15px;
+			border-width: 0px !important;
+			//background-color: rgb(51, 51, 51);
+			background-color: rgb(0,128,0);
+			opacity: 0;
+		}
+		.navbar-minimal &gt; .navbar-menu &gt; li &gt; a &gt; .desc:after {
+			z-index: -1;
+			position: absolute;
+			top: 50%;
+			right: -10px;
+			margin-top: -10px;
+			content:'';
+			width: 0;
+			height: 0;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent; 	
+			//border-right: 10px solid rgb(51, 51, 51);
+			//border-right-color: rgba(51, 51, 51, 0.8);
+		}
+		.navbar-minimal &gt; .navbar-menu &gt; li &gt; a:hover &gt; .desc {
+			right: 60px;
+			opacity: 1;
+		}
+
+
+
+	}
+
+
+
+  
+
+
+
+//--------- END OF SIDE BAR NAVIGATIONS -------------------
+
+
+
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>esm-sp-ess-header</id>
+        <internal>false</internal>
+        <link><![CDATA[function(scope, elem) {
+	$(elem).on('keydown','.header-menu-item',function(e){
+		var target = e.target;
+		if (target.localName == 'a') {
+			if(e.keyCode == 37) {
+				e.preventDefault();
+				$(target).parents('li').removeClass('open');
+				$(target).parents('li').prev('li').find('a').focus();
+			} else if(e.keyCode == 39) {
+				e.preventDefault();
+				$(target).parents('li').removeClass('open');
+				$(target).parents('li').next('li').find('a').focus();
+				
+			}
+			if(e.keyCode == 9) {
+				$(target).parents('li').removeClass('open');
+			}
+		}
+		});
+	}]]></link>
+        <name>ESM SP ESS Header</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.pageid=$sp.getParameter('id');
+	data.userId = gs.getUserID();
+	//data.connect_support_queue_id = $sp.getValue('sp_chat_queue');
+	var user = gs.getUserID();
+
+  //data.connect_support_queue_id = $sp.getValue('sp_chat_queue');
+	data.login_page = $sp.getValue('login_page');
+	data.profileBtnMsg = gs.getMessage("Press space to access user profile or logout");
+	var menu = $sp.getValue("sp_rectangle_menu");
+	data.menu = $sp.getWidgetFromInstance(menu);
+	if (data.menu && data.menu.data) {
+		data.menu.data.replace = true;
+		// Hide login if menu already has link to login
+		data.hasLogin = false;
+		if (data.menu.data.menu.items) {
+			for(var i in data.menu.data.menu.items) {
+			var item = data.menu.data.menu.items[i];
+			if (item.type == 'page' && item.sp_page == data.login_page)
+				data.hasLogin = true;
+			}
+		}	
+	}
+
+data.loginWidget = $sp.getWidgetFromInstance('login-modal');
+
+  /**** To Get the scrolling announcement from Outage Table****/
+	
+	data.outageAlert = [];
+  var outage = new GlideRecord('cmdb_ci_outage');
+	outage.addQuery('end>=javascript:gs.daysAgoStart(0)');
+	outage.query();
+
+	while(outage.next()){
+		console.log("outage");
+		object = {};
+		object.shortDesc = outage.getDisplayValue('short_description');
+		console.log(object.shortDesc);
+		object.id = outage.getValue('sys_id');
+		data.outageAlert.push(object);
+	}
+
+  /**** End of scrolling announcement from Outage Table****/
+
+		/******** To set Bg Image *******/
+
+var userRec = new GlideRecord('sys_user');
+userRec.addQuery('sys_id',user);
+userRec.query();
+
+while(userRec.next()){
+	data.bgNumber = userRec.getDisplayValue('u_background_main');
+	var bg = new GlideRecord('u_main_portal_bg');
+	
+	if(data.bgNumber){
+		
+		bg.addQuery('u_number',data.bgNumber);
+		bg.query();
+	
+		while(bg.next()){
+			data.bgUrl = bg.getDisplayValue('u_image');
+		}
+	}
+	else{
+		var count = 0
+		bg.addActiveQuery();
+		bg.query();
+		
+		while(bg.next() && count<1){
+			data.bgUrl = bg.getDisplayValue('u_image');
+			count = count + 1;
+		}
+	}
+	
+}
+/************** END of BG Image  *************/	
+	
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 06:04:03</sys_created_on>
+        <sys_id>79be39fb4ff4930053c240f18110c77b</sys_id>
+        <sys_mod_count>240</sys_mod_count>
+        <sys_name>ESM SP ESS Header</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sp_header_footer_79be39fb4ff4930053c240f18110c77b</sys_update_name>
+        <sys_updated_by>Sumanth_Ravilla</sys_updated_by>
+        <sys_updated_on>2018-04-10 14:11:42</sys_updated_on>
+        <template><![CDATA[<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+<div ng-hide="data.pageid == 'main' ">
+<div class="page-heading" id="top-heading" style="width:100%;">
+   <div class="container">
+      <div class="row">
+         <div class="row"  style="height:40;padding:0px">
+            <div style="background-color:white !important" class="navbar nav1"  role="navigation">
+               <div class="navbar-header">
+                  <a class="navbar-brand" ng-if="::!portal.logo" href="?id={{::portal.homepage_dv}}"><span>{{::portal.title}}</span></a>
+      						<a class="navbar-brand navbar-brand-logo" ng-if="::portal.logo" href="?id={{::portal.homepage_dv}}" aria-label="${Go to homepage}">
+        						<img ng-src="{{::portal.logo}}" title="ServiceNow" role="presentation" alt="${Portal Logo}" />
+      						</a>
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  </button>
+               </div>
+              <div class="collapse navbar-collapse navbar-right scrollable-dropdown">
+                  <!-- Include The Menu -->
+     <!-- <sp-widget widget="::data.menu"></sp-widget> -->
+      <ul ng-if="::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)" class="nav navbar-nav">
+        <li><a href ng-click="::openLogin()">${Login}</a></li>
+      </ul>
+      <ul ng-if="::user.logged_in" class="nav navbar-nav" aria-haspopup="true" data-toggle="dropdown">
+        
+         <li ><a  class="home" href="?id=ess" title="Home"></a></li>
+        <li ><a  class="" href="" title=""></a></li>
+        
+         <li ng-click="guidedTour()"><a class="pguide" href="#" title="Tour Guide"></a></li> 
+        
+            
+
+        
+      	<!-----Requests --->
+        <li class="hidden-xs dropdown">
+          <a href class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="profile-dropdown" role="button" aria-haspopup="true">
+            <span class="visible-lg-inline"> My Requests</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a ng-href="?id=My_Request" role="menuitem">My Orders</a></li>
+            <li role="presentation"><a href="?id=my_issues" role="menuitem">My Issues</a></li>
+            <li role="presentation"><a href="?id=my_approval" role="menuitem">My Approvals</a></li>
+          </ul>
+        </li>
+        
+        <!-----   MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
+        
+        
+     <li>
+                   <a target="" id="menu_cf1d82de37b22200be4bcea954990ec2" href="?id=my_asset" class="atag">My Assets&nbsp;&nbsp;</a>
+               </li>
+               <li ng-show="persona=='ex'">
+                   <a target=""   href="?id=my_dashboard"  >My Dashboards&nbsp;&nbsp;</a>
+               </li> 
+        
+        
+        <!-----  END OF MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
+
+
+
+        
+   
+        <li style="margin-top:10px;">
+         <sp-widget widget="::data.menu"></sp-widget>
+        </li>
+       
+        
+        <!-- chat, avatar, and logout -->
+        <li ng-if="::data.connect_support_queue_id"><a href ng-click="openPopUp()">${Live Chat}</a></li>
+        <li ng-if="showAvatar" class="hidden-xs dropdown">
+          <a href class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="{{::data.profileBtnMsg}}" id="profile-dropdown" role="button" aria-haspopup="true">
+            <span class="navbar-avatar" aria-hidden="true"><sn-avatar class="avatar-small-medium" primary="avatarProfile" /></span>
+            <span class="visible-lg-inline">{{::user.name}}</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a ng-href="?id=user_profile&sys_id={{::user.sys_id}}" role="menuitem">${Profile}</a></li>
+            <li ng-if="::!isViewNative" role="presentation"><a href="{{::portal.logoutUrl}}" role="menuitem">${Logout}</a></li>
+          </ul>
+        </li>
+        <li ng-if="showXSAvatar" class="visible-xs-block"><a ng-href="?id=user_profile&sys_id={{::user.sys_id}}">
+          <span class="navbar-avatar"><sn-avatar class="avatar-small-medium" primary="avatarProfile" /></span>{{::user.name}}</a>
+        </li>
+        <li ng-if="::!isViewNative" class="visible-xs-block"><a href="{{::portal.logoutUrl}}">${Logout}</a></li>
+        
+        
+        <li>
+                   <a style="color:white" target=""  >dummy&nbsp;&nbsp;</a>
+               </li>
+        
+        
+      </ul>
+                
+                
+                
+                
+                 
+                   
+         <nav style="margin-left:50px !important" class="navbar navbar-fixed-right navbar-minimal animate" role="navigation">
+		<div class="navbar-toggler animate">
+			<span class="menu-icon"></span>
+		</div>
+		<ul class="navbar-menu animate">
+      
+      <li>
+				<a  class="animate" href="?id=main" >
+					<span class="desc animate">Change My Persona</span>
+           <img width="45" src="user_persona.png" height="30" title="change persona">
+				</a>
+			<li>
+				<a  class="animate" ng-click="openChat()" >
+					<span class="desc animate">Live Chat</span>
+           <img width="35" src="livechat.png" height="30" title="Chat">
+				</a>
+			</li>
+			<li>
+				<a href="?id=community" class="animate">
+					<span class="desc animate"> Community Help </span>
+          
+          <img width="35" src="community.jpg" height="30" title="Community Help">
+				</a>
+			</li>
+			<li>
+				<a ng-click="myFunction()" ng-show="data.pageid=='ess' || data.pageid==null" class="animate">
+					<span class="desc animate"> Submit Feedback </span>
+          <img width="35" src="feeback.jpg" height="30" title="Feedback"  >
+				</a>
+			</li>
+		</ul>
+	</nav> 
+                  
+               
+
+                
+                
+               
+               
+       
+  
+  
+       
+                
+              </div>
+                 <!-- End of OOB--->
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+  <div class="">
+   <div ng-if="data.outageAlert.length>0" class="page-heading" style="background-color : #e98300; opacity : 1; margin-right:-15px; margin-top: -20px;  height : 28px;" id="scrollNews">
+      <div class="container marquee">
+        		<ul>
+              <span ng-repeat="value in data.outageAlert">
+               <a href="?id=form&table=cmdb_ci_outage&sys_id={{value.id}}">
+               <strong class='sc-text' style="color:white; ">&nbsp;{{value.shortDesc}} &nbsp;||</strong> 
+               </a>
+               </span>
+        </ul>
+     </div>
+   </div>
+</div>
+<!--<div class="page-heading" style="color:white" id="linktestID" style="width:100%">
+   <div class=" ">
+      <div style="margin-right:0px">
+         <div class="footer-nav" style="font-size:20px;font-weight:bolder;">
+            <ul class="inline-link-list footer-nav-links" style="display:inline; text-shadow: 1px 1px 1px #383838">
+               <li>
+                  <h5> <a target="" id="menu_cf1d82de37b22200be4bcea954990ec2" href="?id=my_asset" class="atag">My Assets&nbsp;&nbsp;</a></h5>
+               </li>
+               <li ng-show="persona=='ex'">
+                  <h5> <a target=""   href="?id=my_dashboard"  >My Dashboards&nbsp;&nbsp;</a></h5>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div> -->
+  
+  <!--<sp-widget  ng-if="::user.logged_in" widget="data.topNewsWidget"></sp-widget>
+  <sp-widget  ng-if="::user.logged_in" widget="data.requestSomethingWidget"></sp-widget>-->
+</div>
+
+
+
+
+
+
+  
+  <script>
+    $(function () {
+  
+    
+    $('.navbar-toggler').on('click', function(event) {
+		event.preventDefault();
+		$(this).closest('.navbar-minimal').toggleClass('open');
+	})
+});
+  </script>
+
+
+
+
+     
+]]></template>
+    </sp_header_footer>
+</record_update>

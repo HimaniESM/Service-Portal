@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>e0c246a66f55df00d69dc8c17c3ee405</documentkey>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;record_update sys_domain="global" table="kb_knowledge"&gt;
+    &lt;kb_knowledge action="INSERT_OR_UPDATE"&gt;
+        &lt;active&gt;true&lt;/active&gt;
+        &lt;article_type&gt;text&lt;/article_type&gt;
+        &lt;author display_value="Divya_M"&gt;4453ceaa6fb01300d69dc8c17c3ee4cc&lt;/author&gt;
+        &lt;can_read_user_criteria/&gt;
+        &lt;cannot_read_user_criteria/&gt;
+        &lt;category/&gt;
+        &lt;cmdb_ci/&gt;
+        &lt;description/&gt;
+        &lt;direct&gt;false&lt;/direct&gt;
+        &lt;disable_commenting&gt;false&lt;/disable_commenting&gt;
+        &lt;disable_suggesting&gt;false&lt;/disable_suggesting&gt;
+        &lt;display_attachments&gt;false&lt;/display_attachments&gt;
+        &lt;flagged&gt;false&lt;/flagged&gt;
+        &lt;image/&gt;
+        &lt;kb_category display_value="General"&gt;34c1f2b24fb8130053c240f18110c79a&lt;/kb_category&gt;
+        &lt;kb_knowledge_base display_value="Knowledge"&gt;dfc19531bf2021003f07e2c1ac0739ab&lt;/kb_knowledge_base&gt;
+        &lt;meta/&gt;
+        &lt;number&gt;KB0010142&lt;/number&gt;
+        &lt;published/&gt;
+        &lt;rating&gt;5&lt;/rating&gt;
+        &lt;retired/&gt;
+        &lt;roles/&gt;
+        &lt;short_description&gt;Virtual Private Network &lt;/short_description&gt;
+        &lt;source/&gt;
+        &lt;sys_class_name&gt;kb_knowledge&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;Divya_M&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2018-04-09 05:40:10&lt;/sys_created_on&gt;
+        &lt;sys_domain&gt;global&lt;/sys_domain&gt;
+        &lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;
+        &lt;sys_id&gt;e0c246a66f55df00d69dc8c17c3ee405&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;Divya_M&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2018-04-09 05:41:06&lt;/sys_updated_on&gt;
+        &lt;sys_view_count&gt;2&lt;/sys_view_count&gt;
+        &lt;text&gt;&lt;![CDATA[&lt;p&gt;A virtual private network (VPN) extends a private network across a public network, and enables users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network. Applications running across the VPN may therefore benefit from the functionality, security, and management of the private network&lt;/p&gt;
+&lt;p&gt; VPNs may allow employees to securely access a corporate intranet while located outside the office. They are used to securely connect geographically separated offices of an organization, creating one cohesive network. Individual Internet users may secure their wireless transactions with a VPN, to circumvent geo-restrictions and censorship, or to connect to proxy servers for the purpose of protecting personal identity and location. However, some Internet sites block access to known VPN technology to prevent the circumvention of their geo-restrictions.&lt;/p&gt;
+&lt;p&gt; A VPN is created by establishing a virtual point-to-point connection through the use of dedicated connections, virtual tunneling protocols, or traffic encryption. A VPN available from the public Internet can provide some of the benefits of a wide area network (WAN). From a user perspective, the resources available within the private network can be accessed remotely.&lt;/p&gt;
+&lt;p&gt;VPN systems may be classified by:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;The protocols used to tunnel the traffic&lt;/li&gt;&lt;li&gt;The tunnel&amp;#39;s termination point location, e.g., on the customer edge or network-provider edge&lt;/li&gt;&lt;li&gt;The type of topology of connections, such as site-to-site or network-to-network&lt;/li&gt;&lt;li&gt;The levels of security provided&lt;/li&gt;&lt;li&gt;The OSI layer they present to the connecting network, such as Layer 2 circuits or Layer 3 network connectivity&lt;/li&gt;&lt;li&gt;The number of simultaneous connections&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;]]&gt;&lt;/text&gt;
+        &lt;topic&gt;General&lt;/topic&gt;
+        &lt;use_count&gt;0&lt;/use_count&gt;
+        &lt;valid_to&gt;2019-04-08&lt;/valid_to&gt;
+        &lt;wiki/&gt;
+        &lt;workflow_state&gt;review&lt;/workflow_state&gt;
+        &lt;x_infte_esm_it_kno_knowledge_reviewer display_value="Divya_M"&gt;20cb2e264fb0130053c240f18110c7b2&lt;/x_infte_esm_it_kno_knowledge_reviewer&gt;
+    &lt;/kb_knowledge&gt;
+    &lt;sys_translated_text action="delete_multiple" query="documentkey=e0c246a66f55df00d69dc8c17c3ee405"/&gt;
+&lt;/record_update&gt;
+</payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-04-09 09:22:12</sys_created_on>
+        <sys_id>5db57a666fd5df00d69dc8c17c3ee459</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>KB0010142</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_metadata_link_5db57a666fd5df00d69dc8c17c3ee459</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-04-09 09:22:12</sys_updated_on>
+        <tablename>kb_knowledge</tablename>
+    </sys_metadata_link>
+</record_update>

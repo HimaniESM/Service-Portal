@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>false</action>
+        <action_event>next</action_event>
+        <action_target/>
+        <action_target_ref display_value="label.announcement.title">4f6987456fe11740d69dc8c17c3ee435</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[The display title of the announcement.]]></content>
+        <guide display_value="Announcements Overview">738683056fe11740d69dc8c17c3ee424</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name>Step 3</name>
+        <options/>
+        <order>3</order>
+        <placement>right</placement>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-04-17 05:13:09</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>db6947456fe11740d69dc8c17c3ee44f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Step 3</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_db6947456fe11740d69dc8c17c3ee44f</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-04-17 05:13:09</sys_updated_on>
+        <target/>
+        <target_ref display_value="label.announcement.title">4f6987456fe11740d69dc8c17c3ee435</target_ref>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>announcement.do</window>
+    </sys_embedded_tour_step>
+    <sys_translated_text action="delete_multiple" query="documentkey=db6947456fe11740d69dc8c17c3ee44f"/>
+</record_update>
