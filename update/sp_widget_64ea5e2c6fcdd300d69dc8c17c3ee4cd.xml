@@ -180,7 +180,7 @@ a{&#13;
         <internal>false</internal>
         <link/>
         <name>dashboard-wid</name>
-        <option_schema/>
+        <option_schema>[{"name":"ai_image","section":"other","default_value":"picture3.jpg","label":"AI Image","type":"string"}]</option_schema>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
@@ -193,14 +193,14 @@ a{&#13;
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-21 16:02:03</sys_created_on>
         <sys_id>64ea5e2c6fcdd300d69dc8c17c3ee4cd</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>dashboard-wid</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_widget_64ea5e2c6fcdd300d69dc8c17c3ee4cd</sys_update_name>
-        <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-03-21 16:02:03</sys_updated_on>
+        <sys_updated_by>Kevin_Domadia</sys_updated_by>
+        <sys_updated_on>2018-04-23 07:04:15</sys_updated_on>
         <template><![CDATA[<div class="row"> 
   
   <div class="col-md-3 part1">
@@ -232,7 +232,7 @@ a{&#13;
     <a href="/esm_main/?id=ai1" target="_blank">
      		<div class="tile">
         	<br/>
-         		<center><img src="picture3.jpg"/> </center>
+         		<center><img src="{{c.options.ai_image}}"/> </center>
         		<br/>
          			<div>
            		<span class="one"><center>AI Dashboard</center></span> 

@@ -80,8 +80,7 @@
   /* e.g., data.table = $sp.getValue('table'); */
 	
 	data.assets = [];
-	
-	//data.user = gs.getUserID();
+
 	var user = gs.getUserID();
 	var gr = new GlideRecord('alm_asset') ;
 	gr.addQuery('assigned_to',user);
@@ -97,7 +96,6 @@
 		object.serialNo = gr.getDisplayValue('serial_number');
 		object.assetTag = gr.getDisplayValue('asset_tag');
 		object.id = gr.getValue('sys_id');
-		//object.user = gr.getDisplayValue()
 		data.assets.push(object);
 	}
 })();]]></script>
@@ -106,57 +104,46 @@
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 13:49:38</sys_created_on>
         <sys_id>6c59af7f6fb89300d69dc8c17c3ee487</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>ESM SP My Assets</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_widget_6c59af7f6fb89300d69dc8c17c3ee487</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-03-19 13:49:38</sys_updated_on>
+        <sys_updated_on>2018-04-21 09:33:12</sys_updated_on>
         <template><![CDATA[<br/>
-<div> 
-<div class="row" ng-repeat="value in data.assets"> 
-  <div data-toggle="collapse" ng-click="func(value.id)" data-target={{appName}} class="main">
-  <div class="asset">
-    
-    <b>{{value.modelCategory}} &nbsp; : &nbsp;{{value.name}} </b> 
-  
-  </div>
-  <div id={{value.id}} class="collapse item">
-           <table>
-             <tr>
-               <td> Model Category &nbsp;</td>
-                 
-               <td class="col2" >{{value.modelCategory}} </td>
-            </tr>
-              <tr>
-               <td> Model  &nbsp;</td>
-                 
-               <td class="col2" > {{value.model}} </td>
-            </tr>
-              <tr>
-               <td> Asset Tag &nbsp;</td>
-                 
-               <td class="col2"> {{value.assetTag}} </td>
-            </tr>
-             <tr>
-               <td>Serial Number &nbsp;</td>
-                 
-               <td class="col2"> {{value.serialNo}} </td>
-            </tr>
-              
-    </table>   
-    
-   </div> 
-</div> 
-  
-</div>
-  <div ng-if="data.assets.length==0" class="notFound">
-   
-    No Assets found 
-  </div>  
-</div>
-]]></template>
+<div>
+   <div class="row" ng-repeat="value in data.assets">
+      <div data-toggle="collapse" ng-click="func(value.id)" data-target={{appName}} class="main">
+         <div class="asset">
+            <b>{{value.modelCategory}} &nbsp; : &nbsp;{{value.name}} </b> 
+         </div>
+         <div id={{value.id}} class="collapse item">
+            <table>
+               <tr>
+                  <td> Model Category &nbsp;</td>
+                  <td class="col2" >{{value.modelCategory}} </td>
+               </tr>
+               <tr>
+                  <td> Model  &nbsp;</td>
+                  <td class="col2" > {{value.model}} </td>
+               </tr>
+               <tr>
+                  <td> Asset Tag &nbsp;</td>
+                  <td class="col2"> {{value.assetTag}} </td>
+               </tr>
+               <tr>
+                  <td>Serial Number &nbsp;</td>
+                  <td class="col2"> {{value.serialNo}} </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>
+   <div ng-if="data.assets.length==0" class="notFound">
+      No Assets found 
+   </div>
+</div>]]></template>
     </sp_widget>
 </record_update>

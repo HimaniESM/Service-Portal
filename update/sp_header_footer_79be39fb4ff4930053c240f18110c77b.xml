@@ -123,34 +123,9 @@ body {
     line-height: 1.42857143;
 }
 
-@media only screen and (max-width: 500px){ 
-  #linktestID{
-  margin-top : -25px;
-		background: transparent; /* fallback for old browsers */
-		
-	}
-}
-
-
-@media only screen and (min-width: 501px){
-  #linktestID{
-  margin-top : -45px;
-		background: transparent; /* fallback for old browsers */
-		
-	}
-
-}
-		
+	
 .page-heading, .page-heading-contact {
   width : 100%;
-}
-
-
-.inline-link-list {
-    font-size: 0;
-    list-style: none;
-    margin: 0 auto;
-  	padding : 3%;
 }
 
  menu, dir {
@@ -161,37 +136,6 @@ body {
     -webkit-margin-end: 0px;
     -webkit-padding-start: 40px;
 }
-
-.footer-nav-links li:first-child {
-    padding-left: 0;
-}
-
-.footer-nav-links li {
-    padding: 0 0 0 0.5%;
-  
-}
-
-.inline-link-list li {
-    display: inline-block;
-    font-size: 14px;
-    line-height: 1;
-}
-
-.footer-nav-links li a{
-  
-  color:#fff;
-  
-  font-family: calibri;
-  font-size: 20px;
-  font-weight : bold;
-}
-
-.heading{
-  margin-top:5px;
-  margin-bottom:5px;
-  font-family: calibri;
-}
-
 
 li{
   font-family: calibri;
@@ -210,10 +154,7 @@ li{
 .dropdown-menu{
  background-color:rgba(202, 197, 197,0.8);
 }
-.text-muted{
-  color : #5d5454;
-}
- 
+
 .nav1{
   
 	height:30px;
@@ -237,37 +178,11 @@ li{
     font-weight: 600;
  }
 
-.divider {
-    position: absolute;
-    right:-1px;
-    top:20px;
-}
-
-
-
-
-
 .nav1 ul li a:hover{
  color:black; 
   background-color:transparent;
    cursor:hand;
 }
-
-.footer-nav{
-  margin-top:3%;
-}
- 
-.logo{
-  
-  padding-left : 10.5% !important;
-}
-
-.list{
-  padding-right : 10%;
-}
-*/
-
-////cart button styling ///
 
 .nav1 .btn-group &gt; a {
     margin-top: 0px !important;
@@ -356,35 +271,7 @@ margin: 0px;
   transform: translateY(-50%);
 }
 
-.pguide
-{
-    background-image: url('portal_guide_image.png');
-    background-repeat: no-repeat;
-    //background-size: 40px 20px;
-  background-size: contain;
-    margin-top:10px;
-  width:60px;
-  height:40px
-}
-
-.home
-{
-    background-image: url('home_esm.png');
-    background-repeat: no-repeat;
-    //background-size: 40px 20px;
-  background-size: contain;
-    margin-top:10px;
-  width:40px;
-  height:10px
-}
-
-
-
 // -------- SIDE BAR NAVIGATIONS---------------
-
-
-
-
 .animate {
 		-webkit-transition: all 0.6s ease-in-out;
 		-moz-transition: all 0.6s ease-in-out;
@@ -420,7 +307,6 @@ margin: 0px;
 
 	.navbar-minimal.open &gt; .navbar-toggler,
 	.navbar-minimal &gt; .navbar-toggler:hover {
-		//background-color: rgb(158, 202, 59);
     background-color:rgb(0,128,0);
 	}
 
@@ -480,7 +366,6 @@ margin: 0px;
 		border-bottom-width: 0px;
 	}
 	.navbar-minimal &gt; .navbar-menu &gt; li &gt; a:hover {
-		//background-color: rgb(158, 202, 59);
     background-color:rgb(0,128,0)
 	}
 	.navbar-minimal &gt; .navbar-menu &gt; li &gt; a &gt; .glyphicon {
@@ -523,9 +408,7 @@ margin: 0px;
 			text-align: left;
 			white-space: nowrap;
 			padding: 20px 13px;
-     // margin-top:-15px;
 			border-width: 0px !important;
-			//background-color: rgb(51, 51, 51);
 			background-color: rgb(0,128,0);
 			opacity: 0;
 		}
@@ -539,17 +422,12 @@ margin: 0px;
 			width: 0;
 			height: 0;
 			border-top: 10px solid transparent;
-			border-bottom: 10px solid transparent; 	
-			//border-right: 10px solid rgb(51, 51, 51);
-			//border-right-color: rgba(51, 51, 51, 0.8);
+			border-bottom: 10px solid transparent; 
 		}
 		.navbar-minimal &gt; .navbar-menu &gt; li &gt; a:hover &gt; .desc {
 			right: 60px;
 			opacity: 1;
 		}
-
-
-
 	}
 
 
@@ -632,10 +510,8 @@ data.loginWidget = $sp.getWidgetFromInstance('login-modal');
 	outage.query();
 
 	while(outage.next()){
-		console.log("outage");
 		object = {};
 		object.shortDesc = outage.getDisplayValue('short_description');
-		console.log(object.shortDesc);
 		object.id = outage.getValue('sys_id');
 		data.outageAlert.push(object);
 	}
@@ -681,221 +557,150 @@ while(userRec.next()){
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 06:04:03</sys_created_on>
         <sys_id>79be39fb4ff4930053c240f18110c77b</sys_id>
-        <sys_mod_count>240</sys_mod_count>
+        <sys_mod_count>269</sys_mod_count>
         <sys_name>ESM SP ESS Header</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_header_footer_79be39fb4ff4930053c240f18110c77b</sys_update_name>
-        <sys_updated_by>Sumanth_Ravilla</sys_updated_by>
-        <sys_updated_on>2018-04-10 14:11:42</sys_updated_on>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-04-21 09:33:55</sys_updated_on>
         <template><![CDATA[<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-
+   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <div ng-hide="data.pageid == 'main' ">
-<div class="page-heading" id="top-heading" style="width:100%;">
-   <div class="container">
-      <div class="row">
-         <div class="row"  style="height:40;padding:0px">
-            <div style="background-color:white !important" class="navbar nav1"  role="navigation">
-               <div class="navbar-header">
-                  <a class="navbar-brand" ng-if="::!portal.logo" href="?id={{::portal.homepage_dv}}"><span>{{::portal.title}}</span></a>
-      						<a class="navbar-brand navbar-brand-logo" ng-if="::portal.logo" href="?id={{::portal.homepage_dv}}" aria-label="${Go to homepage}">
-        						<img ng-src="{{::portal.logo}}" title="ServiceNow" role="presentation" alt="${Portal Logo}" />
-      						</a>
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  </button>
-               </div>
-              <div class="collapse navbar-collapse navbar-right scrollable-dropdown">
-                  <!-- Include The Menu -->
-     <!-- <sp-widget widget="::data.menu"></sp-widget> -->
-      <ul ng-if="::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)" class="nav navbar-nav">
-        <li><a href ng-click="::openLogin()">${Login}</a></li>
-      </ul>
-      <ul ng-if="::user.logged_in" class="nav navbar-nav" aria-haspopup="true" data-toggle="dropdown">
-        
-         <li ><a  class="home" href="?id=ess" title="Home"></a></li>
-        <li ><a  class="" href="" title=""></a></li>
-        
-         <li ng-click="guidedTour()"><a class="pguide" href="#" title="Tour Guide"></a></li> 
-        
-            
-
-        
-      	<!-----Requests --->
-        <li class="hidden-xs dropdown">
-          <a href class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="profile-dropdown" role="button" aria-haspopup="true">
-            <span class="visible-lg-inline"> My Requests</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a ng-href="?id=My_Request" role="menuitem">My Orders</a></li>
-            <li role="presentation"><a href="?id=my_issues" role="menuitem">My Issues</a></li>
-            <li role="presentation"><a href="?id=my_approval" role="menuitem">My Approvals</a></li>
-          </ul>
-        </li>
-        
-        <!-----   MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
-        
-        
-     <li>
-                   <a target="" id="menu_cf1d82de37b22200be4bcea954990ec2" href="?id=my_asset" class="atag">My Assets&nbsp;&nbsp;</a>
-               </li>
-               <li ng-show="persona=='ex'">
-                   <a target=""   href="?id=my_dashboard"  >My Dashboards&nbsp;&nbsp;</a>
-               </li> 
-        
-        
-        <!-----  END OF MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
-
-
-
-        
-   
-        <li style="margin-top:10px;">
-         <sp-widget widget="::data.menu"></sp-widget>
-        </li>
-       
-        
-        <!-- chat, avatar, and logout -->
-        <li ng-if="::data.connect_support_queue_id"><a href ng-click="openPopUp()">${Live Chat}</a></li>
-        <li ng-if="showAvatar" class="hidden-xs dropdown">
-          <a href class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="{{::data.profileBtnMsg}}" id="profile-dropdown" role="button" aria-haspopup="true">
-            <span class="navbar-avatar" aria-hidden="true"><sn-avatar class="avatar-small-medium" primary="avatarProfile" /></span>
-            <span class="visible-lg-inline">{{::user.name}}</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a ng-href="?id=user_profile&sys_id={{::user.sys_id}}" role="menuitem">${Profile}</a></li>
-            <li ng-if="::!isViewNative" role="presentation"><a href="{{::portal.logoutUrl}}" role="menuitem">${Logout}</a></li>
-          </ul>
-        </li>
-        <li ng-if="showXSAvatar" class="visible-xs-block"><a ng-href="?id=user_profile&sys_id={{::user.sys_id}}">
-          <span class="navbar-avatar"><sn-avatar class="avatar-small-medium" primary="avatarProfile" /></span>{{::user.name}}</a>
-        </li>
-        <li ng-if="::!isViewNative" class="visible-xs-block"><a href="{{::portal.logoutUrl}}">${Logout}</a></li>
-        
-        
-        <li>
-                   <a style="color:white" target=""  >dummy&nbsp;&nbsp;</a>
-               </li>
-        
-        
-      </ul>
-                
-                
-                
-                
-                 
-                   
-         <nav style="margin-left:50px !important" class="navbar navbar-fixed-right navbar-minimal animate" role="navigation">
-		<div class="navbar-toggler animate">
-			<span class="menu-icon"></span>
-		</div>
-		<ul class="navbar-menu animate">
-      
-      <li>
-				<a  class="animate" href="?id=main" >
-					<span class="desc animate">Change My Persona</span>
-           <img width="45" src="user_persona.png" height="30" title="change persona">
-				</a>
-			<li>
-				<a  class="animate" ng-click="openChat()" >
-					<span class="desc animate">Live Chat</span>
-           <img width="35" src="livechat.png" height="30" title="Chat">
-				</a>
-			</li>
-			<li>
-				<a href="?id=community" class="animate">
-					<span class="desc animate"> Community Help </span>
-          
-          <img width="35" src="community.jpg" height="30" title="Community Help">
-				</a>
-			</li>
-			<li>
-				<a ng-click="myFunction()" ng-show="data.pageid=='ess' || data.pageid==null" class="animate">
-					<span class="desc animate"> Submit Feedback </span>
-          <img width="35" src="feeback.jpg" height="30" title="Feedback"  >
-				</a>
-			</li>
-		</ul>
-	</nav> 
-                  
-               
-
-                
-                
-               
-               
-       
-  
-  
-       
-                
-              </div>
-                 <!-- End of OOB--->
+   <div class="page-heading" id="top-heading" style="width:100%;">
+      <div class="container">
+         <div class="row">
+            <div class="row"  style="height:40;padding:0px">
+               <div style="background-color:white !important" class="navbar nav1"  role="navigation">
+                  <div class="navbar-header">
+                     <a class="navbar-brand" ng-if="::!portal.logo" href="?id={{::portal.homepage_dv}}"><span>{{::portal.title}}</span></a>
+                     <a class="navbar-brand navbar-brand-logo" ng-if="::portal.logo" href="?id={{::portal.homepage_dv}}" aria-label="${Go to homepage}">
+                     <img ng-src="{{::portal.logo}}" title="ServiceNow" role="presentation" alt="${Portal Logo}" />
+                     </a>
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     </button>
+                  </div>
+                  <div class="collapse navbar-collapse navbar-right scrollable-dropdown">
+                     <!-- Include The Menu -->
+                     <!-- <sp-widget widget="::data.menu"></sp-widget> -->
+                     <ul ng-if="::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)" class="nav navbar-nav">
+                        <li><a href ng-click="::openLogin()">${Login}</a></li>
+                     </ul>
+                     <ul ng-if="::user.logged_in" class="nav navbar-nav" aria-haspopup="true" data-toggle="dropdown">
+                       <li><a style="margin-top:-5px;" href="?id=ess"><img src="home_esm.png" height=20 width=25  /></a></li>
+                        <li  ng-show="data.pageid == 'ess' || data.pageid==null " ng-click="guidedTour()"><a style="margin-top:-5px;" href="#"><img src="portal_guide_image.png" height=20 width=25/></a></li>
+                        <!-----Requests --->
+                        <li class="hidden-xs dropdown" id="esm-request">
+                           <a href class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="profile-dropdown" role="button" aria-haspopup="true">
+                           <span class="visible-lg-inline"> My Requests</span>
+                           </a>
+                           <ul class="dropdown-menu" role="menu">
+                              <li role="presentation"><a ng-href="?id=My_Request" role="menuitem">My Orders</a></li>
+                              <li role="presentation"><a href="?id=my_issues" role="menuitem">My Issues</a></li>
+                              <li role="presentation"><a href="?id=my_approval" role="menuitem">My Approvals</a></li>
+                           </ul>
+                        </li>
+                        <!-----   MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
+                        <li id="esm-asset">
+                           <a target="" id="menu_cf1d82de37b22200be4bcea954990ec2" href="?id=my_asset" class="atag">My Assets&nbsp;&nbsp;</a>
+                        </li>
+                        <li ng-show="persona=='ex'">
+                           <a target=""   href="?id=my_dashboard"  >My Dashboards&nbsp;&nbsp;</a>
+                        </li>
+                        <!-----  END OF MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
+                        <li style="margin-top:10px;">
+                           <sp-widget widget="::data.menu"></sp-widget>
+                        </li>
+                        <!-- chat, avatar, and logout -->
+                        <li ng-if="::data.connect_support_queue_id"><a href ng-click="openPopUp()">${Live Chat}</a></li>
+                        <li ng-if="showAvatar" id="esm-user" class="hidden-xs dropdown">
+                           <a href class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="{{::data.profileBtnMsg}}" id="profile-dropdown" role="button" aria-haspopup="true">
+                              <span class="navbar-avatar" aria-hidden="true">
+                                 <sn-avatar class="avatar-small-medium" primary="avatarProfile" />
+                              </span>
+                              <span class="visible-lg-inline">{{::user.name}}</span>
+                           </a>
+                           <ul class="dropdown-menu" role="menu">
+                              <li role="presentation"><a ng-href="?id=user_profile&sys_id={{::user.sys_id}}" role="menuitem">${Profile}</a></li>
+                              <li ng-if="::!isViewNative" role="presentation"><a href="{{::portal.logoutUrl}}" role="menuitem">${Logout}</a></li>
+                           </ul>
+                        </li>
+                        <li ng-if="showXSAvatar" class="visible-xs-block">
+                           <a ng-href="?id=user_profile&sys_id={{::user.sys_id}}">
+                              <span class="navbar-avatar">
+                                 <sn-avatar class="avatar-small-medium" primary="avatarProfile" />
+                              </span>
+                              {{::user.name}}
+                           </a>
+                        </li>
+                        <li ng-if="::!isViewNative" class="visible-xs-block"><a href="{{::portal.logoutUrl}}">${Logout}</a></li>
+                        <li>
+                           <a style="color:white" target=""  >dummy&nbsp;&nbsp;</a>
+                        </li>
+                     </ul>
+                     <nav style="margin-left:50px !important" class="navbar navbar-fixed-right navbar-minimal animate" role="navigation">
+                        <div id="esm-toggle" class="navbar-toggler animate">
+                           <span class="menu-icon"></span>
+                        </div>
+                        <ul class="navbar-menu animate">
+                           <li>
+                              <a  class="animate" href="?id=main" >
+                              <span class="desc animate">Change My Persona</span>
+                              <img width="45" src="user_persona.png" height="30" title="change persona">
+                              </a>
+                           <li>
+                              <a  class="animate" ng-click="openChat()" >
+                              <span class="desc animate">Live Chat</span>
+                              <img width="35" src="livechat.png" height="30" title="Chat">
+                              </a>
+                           </li>
+                           <li>
+                              <a href="?id=community" class="animate">
+                              <span class="desc animate"> Community Help </span>
+                              <img width="35" src="community.jpg" height="30" title="Community Help">
+                              </a>
+                           </li>
+                           <li>
+                              <a ng-click="myFunction()" ng-show="data.pageid=='ess' || data.pageid==null" class="animate">
+                              <span class="desc animate"> Submit Feedback </span>
+                              <img width="35" src="feeback.jpg" height="30" title="Feedback"  >
+                              </a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <!-- End of OOB--->
                </div>
             </div>
          </div>
       </div>
    </div>
-  <div class="">
-   <div ng-if="data.outageAlert.length>0" class="page-heading" style="background-color : #e98300; opacity : 1; margin-right:-15px; margin-top: -20px;  height : 28px;" id="scrollNews">
-      <div class="container marquee">
-        		<ul>
-              <span ng-repeat="value in data.outageAlert">
+   <div class="">
+      <div ng-if="data.outageAlert.length>0" class="page-heading" style="background-color : #e98300; opacity : 1; margin-right:-15px; margin-top: -20px;  height : 28px;" id="scrollNews">
+         <div class="container marquee">
+            <ul>
+               <span ng-repeat="value in data.outageAlert">
                <a href="?id=form&table=cmdb_ci_outage&sys_id={{value.id}}">
                <strong class='sc-text' style="color:white; ">&nbsp;{{value.shortDesc}} &nbsp;||</strong> 
                </a>
                </span>
-        </ul>
-     </div>
-   </div>
-</div>
-<!--<div class="page-heading" style="color:white" id="linktestID" style="width:100%">
-   <div class=" ">
-      <div style="margin-right:0px">
-         <div class="footer-nav" style="font-size:20px;font-weight:bolder;">
-            <ul class="inline-link-list footer-nav-links" style="display:inline; text-shadow: 1px 1px 1px #383838">
-               <li>
-                  <h5> <a target="" id="menu_cf1d82de37b22200be4bcea954990ec2" href="?id=my_asset" class="atag">My Assets&nbsp;&nbsp;</a></h5>
-               </li>
-               <li ng-show="persona=='ex'">
-                  <h5> <a target=""   href="?id=my_dashboard"  >My Dashboards&nbsp;&nbsp;</a></h5>
-               </li>
             </ul>
          </div>
       </div>
    </div>
-</div> -->
-  
-  <!--<sp-widget  ng-if="::user.logged_in" widget="data.topNewsWidget"></sp-widget>
-  <sp-widget  ng-if="::user.logged_in" widget="data.requestSomethingWidget"></sp-widget>-->
 </div>
-
-
-
-
-
-
-  
-  <script>
-    $(function () {
-  
-    
-    $('.navbar-toggler').on('click', function(event) {
-		event.preventDefault();
-		$(this).closest('.navbar-minimal').toggleClass('open');
-	})
-});
-  </script>
-
-
-
-
-     
-]]></template>
+<script>
+   $(function () {   
+   $('.navbar-toggler').on('click', function(event) {
+   event.preventDefault();
+   $(this).closest('.navbar-minimal').toggleClass('open');
+   })
+   });
+</script>]]></template>
     </sp_header_footer>
 </record_update>
