@@ -557,14 +557,14 @@ while(userRec.next()){
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 06:04:03</sys_created_on>
         <sys_id>79be39fb4ff4930053c240f18110c77b</sys_id>
-        <sys_mod_count>269</sys_mod_count>
+        <sys_mod_count>270</sys_mod_count>
         <sys_name>ESM SP ESS Header</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_header_footer_79be39fb4ff4930053c240f18110c77b</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-04-21 09:33:55</sys_updated_on>
+        <sys_updated_on>2018-04-23 12:59:44</sys_updated_on>
         <template><![CDATA[<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <div ng-hide="data.pageid == 'main' ">
@@ -608,9 +608,6 @@ while(userRec.next()){
                         <!-----   MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
                         <li id="esm-asset">
                            <a target="" id="menu_cf1d82de37b22200be4bcea954990ec2" href="?id=my_asset" class="atag">My Assets&nbsp;&nbsp;</a>
-                        </li>
-                        <li ng-show="persona=='ex'">
-                           <a target=""   href="?id=my_dashboard"  >My Dashboards&nbsp;&nbsp;</a>
                         </li>
                         <!-----  END OF MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
                         <li style="margin-top:10px;">
