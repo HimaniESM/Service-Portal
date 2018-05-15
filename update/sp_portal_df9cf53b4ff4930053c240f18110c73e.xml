@@ -5,7 +5,7 @@
         <default>false</default>
         <homepage display_value="ess">7a0efdbb4ff4930053c240f18110c7b9</homepage>
         <icon/>
-        <kb_knowledge_base/>
+        <kb_knowledge_base display_value="Knowledge">dfc19531bf2021003f07e2c1ac0739ab</kb_knowledge_base>
         <kb_knowledge_page/>
         <login_page/>
         <logo/>
@@ -21,17 +21,17 @@
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 05:54:39</sys_created_on>
         <sys_id>df9cf53b4ff4930053c240f18110c73e</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>ESM SP Main Portal</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_portal_df9cf53b4ff4930053c240f18110c73e</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-03-19 13:36:16</sys_updated_on>
+        <sys_updated_on>2018-05-14 06:20:18</sys_updated_on>
         <theme display_value="esm_sp_esm_main">51548af76fb49300d69dc8c17c3ee412</theme>
         <title>ESM SP Main Portal</title>
-        <url_suffix>esm_main</url_suffix>
+        <url_suffix>sp_main</url_suffix>
     </sp_portal>
     <sys_translated_text action="delete_multiple" query="documentkey=df9cf53b4ff4930053c240f18110c73e"/>
     <sys_attachment action="INSERT_OR_UPDATE">
