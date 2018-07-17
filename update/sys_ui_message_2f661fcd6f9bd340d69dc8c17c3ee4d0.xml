@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application/>
+        <key>esm.Change Background</key>
+        <language>en</language>
+        <message>Change Background</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-07-13 06:00:22</sys_created_on>
+        <sys_id>2f661fcd6f9bd340d69dc8c17c3ee4d0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>esm.Change Background</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_ui_message_2f661fcd6f9bd340d69dc8c17c3ee4d0</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-07-13 06:22:40</sys_updated_on>
+    </sys_ui_message>
+</record_update>

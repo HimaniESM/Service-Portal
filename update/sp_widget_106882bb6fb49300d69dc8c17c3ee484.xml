@@ -135,7 +135,7 @@ a{
 
 }]]></link>
         <name>Esm Announcement Widget</name>
-        <option_schema>[{"hint":"Add a new label","name":"title1","section":"Presentation","default_value":"Announcements","label":"\"Announcements\" Replacement Text","type":"string"},{"hint":"Enter Image name , example-  image1.jpg","name":"icon1","section":"Presentation","default_value":"report.png","label":"Change Icon for \"Announcements\"","type":"string"},&#13;
+        <option_schema>[{"hint":"Add a new label","name":"title1","section":"Presentation","default_value":"esm.Announcements","label":"\"Announcements\" Replacement Text","type":"string"},{"hint":"Enter Image name , example-  image1.jpg","name":"icon1","section":"Presentation","default_value":"report.png","label":"Change Icon for \"Announcements\"","type":"string"},&#13;
 {"hint":"Select category to display top news","default_value":"4bacdd6fdb5897407b9b9ea3db961991","name":"kb_category","section":"Presentation","label":"KB category","type":"reference","value":"kb_category","ed":{"reference":"kb_category"}},&#13;
 {"hint":"Select user profile to update the persona", "section":"Presentation", "name":"profile","label":"User Profile","type":"reference","value":"x_infte_esm_servic_esm_main_portal_persona_table","ed":{"reference":"x_infte_esm_servic_esm_main_portal_persona_table"}},&#13;
 {"hint":"Provide persona color for selected profile", "section":"Presentation", "name":"persona_color","label":"Profile specific persona color","type":"string","default_value":"Give color code in rgba(1,1,1,1) format"}]&#13;
@@ -148,6 +148,7 @@ a{
   /* e.g., data.table = $sp.getValue('table'); */
 	//data.pageid=$sp.getParameter('id');
 	
+	data.title = gs.getMessage(options.title1);
 	data.user = gs.getUserID();
 	
 	/*************** To Set Persona color from Instance Options*****/
@@ -223,14 +224,14 @@ a{
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 06:46:26</sys_created_on>
         <sys_id>106882bb6fb49300d69dc8c17c3ee484</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>Esm Announcement Widget</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_widget_106882bb6fb49300d69dc8c17c3ee484</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-04-23 07:44:23</sys_updated_on>
+        <sys_updated_on>2018-07-13 09:09:19</sys_updated_on>
         <template><![CDATA[ 
 <div class=" home-content" id="esm-top-news">
    <div class=" column-home ">
@@ -238,7 +239,7 @@ a{
          <a style="height:160px;" href="?id=announcements" id="topTile" class="column-heading testing text-center mob_esm">
             <div class="inside-tile">
                <img width="60" class="hide_esm" src={{::options.icon1}} height="60">
-               <h4 class="heading-title">{{::options.title1}}</h4>
+               <h4 class="heading-title">{{data.title}}</h4>
                <p></p>
             </div>
          </a>

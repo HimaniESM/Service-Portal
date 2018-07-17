@@ -103,7 +103,7 @@ a{
         <internal>false</internal>
         <link/>
         <name>ESM Request Services Widget</name>
-        <option_schema>[{"hint":"Request for Services and Access","name":"title3","section":"Presentation","default_value":"Request for Services and Access","label":"\"Request for Services and Access\" Replacement Text","type":"string"},{"hint":"Enter Image name , example-  image1.jpg","name":"icon3","section":"Presentation","default_value":"orderthings2.png","label":"Icon for Request for Services and Access","type":"string"},{"displayValue":"Category","hint":"Select the Service Catalog- categories to be displayed in the widget","name":"categories","display_value_list":[],"section":"Data","label":"Categories","type":"glide_list","value":"sc_category","ed":{"reference":"sc_category"}}]</option_schema>
+        <option_schema>[{"hint":"Request for Services and Access","name":"title3","section":"Presentation","default_value":"esm.request for services","label":"\"Request for Services and Access\" Replacement Text","type":"string"},{"hint":"Enter Image name , example-  image1.jpg","name":"icon3","section":"Presentation","default_value":"orderthings2.png","label":"Icon for Request for Services and Access","type":"string"},{"displayValue":"Category","hint":"Select the Service Catalog- categories to be displayed in the widget","name":"categories","display_value_list":[],"section":"Data","label":"Categories","type":"glide_list","value":"sc_category","ed":{"reference":"sc_category"}}]</option_schema>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
@@ -112,6 +112,7 @@ a{
   /* e.g., data.table = $sp.getValue('table'); */
 	//data.pageid=$sp.getParameter('id');
 	
+	data.title = gs.getMessage(options.title3); //to display label of the tile
 	
 	/*************** Categories **********/
 	data.categoryArray = [];
@@ -123,7 +124,7 @@ a{
 	
 	while(grCategories.next()){
 	catObj = {};
-	catObj.title = grCategories.getValue('title');
+	catObj.title = grCategories.getDisplayValue('title');
 	catObj.desc = grCategories.getValue('description');
 	catObj.link = '?id=esm_sc_category&sys_id=' + grCategories.sys_id;
 	catObj.img = grCategories.getDisplayValue('homepage_image');
@@ -167,21 +168,21 @@ a{
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 06:48:05</sys_created_on>
         <sys_id>9ac886bb6fb49300d69dc8c17c3ee488</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_name>ESM Request Services Widget</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_widget_9ac886bb6fb49300d69dc8c17c3ee488</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-04-20 13:15:58</sys_updated_on>
+        <sys_updated_on>2018-07-13 05:46:32</sys_updated_on>
         <template><![CDATA[<div class=" home-content" id="esm-service-request">
    <div class=" column-home ">
       <div class="whole-tile">
          <a style="height:160px;" id="reqTile" href="?id=esm_service_catalog" class="column-heading text-center mob_esm" target="">
             <div class="inside-tile">
                <img width="60" class="hide_esm" src={{::options.icon3}} height="60">
-               <h4 class="heading-title">{{::options.title3}}</h4>
+               <h4 class="heading-title">{{data.title}}</h4>
                <p></p>
             </div>
          </a>
@@ -192,7 +193,7 @@ a{
                   </a>
                </li>
                <li > <a href="?id=esm_service_catalog" >  	 
-                  More....      
+                  ${esm.more}     
                   </a>
                </li>
             </ul>

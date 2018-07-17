@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element dynamic_default_value="2019-06-06 16:49:53" label="ESM Portal Background Images" max_length="40" name="x_infte_esm_servic_esm_portal_background_images" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element dynamic_default_value="2019-06-06 16:51:20" label="Image" max_length="40" name="u_image" type="user_image"/>
+    </element>
+</database>

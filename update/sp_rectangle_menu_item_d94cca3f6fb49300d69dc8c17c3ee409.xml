@@ -26,18 +26,31 @@
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 07:02:45</sys_created_on>
         <sys_id>d94cca3f6fb49300d69dc8c17c3ee409</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Surveys</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Enquêtes</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_rectangle_menu_item_d94cca3f6fb49300d69dc8c17c3ee409</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-03-19 07:02:45</sys_updated_on>
+        <sys_updated_on>2018-07-13 05:43:13</sys_updated_on>
         <table/>
         <type>url</type>
         <url>?id=my_surveys</url>
         <url_target/>
     </sp_rectangle_menu_item>
     <sys_translated_text action="delete_multiple" query="documentkey=d94cca3f6fb49300d69dc8c17c3ee409"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>d94cca3f6fb49300d69dc8c17c3ee409</documentkey>
+        <fieldname>label</fieldname>
+        <language>fr</language>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-07-13 05:43:13</sys_created_on>
+        <sys_id>c8a2570d6f9bd340d69dc8c17c3ee466</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-07-13 05:43:13</sys_updated_on>
+        <tablename>sp_rectangle_menu_item</tablename>
+        <value>Enquêtes</value>
+    </sys_translated_text>
 </record_update>

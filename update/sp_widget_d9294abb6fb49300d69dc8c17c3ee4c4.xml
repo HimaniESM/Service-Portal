@@ -307,7 +307,7 @@ a{
         <internal>false</internal>
         <link/>
         <name>ESM Need Help Widget</name>
-        <option_schema>[{"hint":"Need Help","name":"title4","section":"Presentation","default_value":"Need Help","label":"\"Need Help\" Replacement Text","type":"string"},&#13;
+        <option_schema>[{"hint":"Need Help","name":"title4","section":"Presentation","default_value":"esm.needHelp","label":"\"Need Help\" Replacement Text","type":"string"},&#13;
 {"hint":"Enter Image name , example-  image1.jpg","name":"icon4","section":"Presentation","default_value":"gethelp.png","label":"Icon for \"Need Help\"","type":"string"},&#13;
 {"hint":"Record Producer used for creating Log an Issue", "section":"Presentation", "name":"logAnIssue","label":"Record Producer used for \" Log An Issue \" ","type":"reference","value":"sc_cat_item_producer","ed":{"reference":"sc_cat_item_producer"}},&#13;
 {"hint":"Chat Queue to be linked with portal", "section":"Presentation", "name":"chat","label":"Chat Queue","type":"reference","value":"chat_queue","ed":{"reference":"chat_queue"}}]</option_schema>
@@ -320,6 +320,7 @@ a{
 	//data.pageid=$sp.getParameter('id');
 	
 	
+	data.title = gs.getMessage(options.title4);
 	/*************** Feedback ***************/
 	data.submitMsg = gs.getMessage("Submit");
 	data.user = gs.getUserID();
@@ -430,9 +431,27 @@ a{
 			data.chat_avg_time = chatQueue.getDisplayValue('average_wait_time');
 		}
 	}
-//data.connect_support_queue_id = '4bc7a3f3c31331001c845cb981d3ae44';
+
 	
 	/*************** Chat Ends ************/
+	
+	/*************** Log an Issue ***********/
+	
+	if(!options.logAnIssue){
+		var issue = new GlideRecord('sc_cat_item_producer');
+		issue.addActiveQuery();
+		issue.addQuery('name','Create Incident');
+		issue.query();
+		
+		while(issue.next()){
+			data.issueID = issue.getValue('sys_id'); //to get the sys_id of create incident record producer
+		}
+	}
+	else{
+		data.issueID = options.logAnIssue;
+	}
+	
+	/*************** Log an Issue Ends **********/
 }
 
 )();
@@ -442,37 +461,37 @@ a{
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 06:49:36</sys_created_on>
         <sys_id>d9294abb6fb49300d69dc8c17c3ee4c4</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>ESM Need Help Widget</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_widget_d9294abb6fb49300d69dc8c17c3ee4c4</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-05-14 08:49:37</sys_updated_on>
+        <sys_updated_on>2018-07-13 09:38:15</sys_updated_on>
         <template><![CDATA[<div class=" home-content">
 <div class=" column-home ">
    <div class="whole-tile">
       <a style="height:160px;" id='helpTile' href="?id=form&table=incident&sys_id=-1&view=ess" class="column-heading text-center mob_esm" target="">
          <div class="inside-tile">
             <img width="60" class="hide_esm" src={{::options.icon4}} height="60">
-            <h4 class="heading-title">{{::options.title4}}</h4>
+            <h4 class="heading-title">{{data.title}}</h4>
             <p></p>
          </div>
       </a>
       <div class="column-content">
          <ul>
-            <li id="log-an-issue"><a target="" href="?id=sc_cat_item&sys_id=3f1dd0320a0a0b99000a53f7604a2ef9" ng-attr-id={{persona}}>
-               Log an Issue</a>
+            <li id="log-an-issue"><a target="" href="?id=sc_cat_item&sys_id={{data.issueID}}" ng-attr-id={{persona}}>
+               ${esm.Log an Issue}</a>
             </li>
             <li id="live-chat"><a href="javascript:void(0)" ng-click="openPopUp();" ng-attr-id={{persona}} title="Average wait time : {{data.chat_avg_time}}">
-               Live Chat</a>
+               ${esm.Live Chat}</a>
             </li>
             <li id="esm-incident-history"><a target="" href="?id=incident_history&table=incident&filter=caller_id%3Djavascript:gs.getUserID()" ng-attr-id={{persona}}> 
-               Incident History</a>
+               ${esm.Incident History}</a>
             </li>
             <li id="community"><a target="" href="?id=community" ng-attr-id={{persona}}> 
-               Community Help</a>
+               ${esm.Community Help}</a>
             </li>
             <!--<li><a target="" href="?id=community" ng-attr-id={{persona}}> 
                Popular Questions</a>
@@ -488,85 +507,85 @@ a{
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="memberModalLabel">Feedback Form</h4>
+            <h4 class="modal-title" id="memberModalLabel">${esm.Feedback Form}</h4>
             <h5>
-               Please provide your feedback for the recently closed ticket <a href="?id=ticket&table=incident&sys_id={{data.incID}}" target="_blank">{{data.incNumber}}</a>
+               ${esm.Feedback Form.desc}<a href="?id=ticket&table=incident&sys_id={{data.incID}}" target="_blank">{{data.incNumber}}</a>
             </h5>
          </div>
          <form ng-submit="server.update()">
             <div class="modal-body">
                <p>
-                  ${How Satisfied are you with the overall service experience?}
+                  ${esm.Feedback Form.question1}
                   <br>
                   <uib-rating ng-model="data.rating" max="5"></uib-rating>
                </p>
                <br>
                <p>
-                  ${Please rate the professionalism of the technician supporting you.}
+                  ${esm.Feedback Form.question2}
                   <br>
                   <uib-rating ng-model="data.rating1" max="5"></uib-rating>
                </p>
                <br>
                <p>
-                  ${How would you rate the time it took for the agent to resolve the issue?}
+                  ${esm.Feedback Form.question3}
                   <br>
                   <uib-rating ng-model="data.rating2" max="5"></uib-rating>
                </p>
                <br>
                <div ng-show="data.rating==5">
-                  <p style="text-align:center"><b>${Give a Compliment}</b></p>
+                  <p style="text-align:center"><b>${esm.Give a Compliment}</b></p>
                   <div class="row compliment">
                      <div class="comp col-md-3" id="Outstanding Service">
                         <a ng-click="getComments('Outstanding Service')" href="javascript:void(0)">
                         <img src="feedbackIcon1.jpg">
-                        Outstanding Service
+                        ${esm.Outstanding Service}
                         </a>
                      </div>
                      <div class="comp col-md-3" id="Professionalism-compliment">
                         <a ng-click="getComments('Professionalism-compliment')" href="javascript:void(0)">
                         <img src="feedbackIcon2.jpg">
-                        Professionalism
+                        ${esm.Professionalism}
                         </a>
                      </div>
                      <div class="comp col-md-3"  id="Expert Advice">
                         <a ng-click="getComments('Expert Advice')" href="javascript:void(0)">
                         <img src="feedbackIcon3.jpg">
-                        Expert Advice
+                        ${esm.Expert Advice}
                         </a>
                      </div>
                      <div class="comp col-md-3" id="Super Quick Resolution">
                         <a ng-click="getComments('Super Quick Resolution')" href="javascript:void(0)">
                         <img src="feedbackIcon4.jpg">
-                        Super Quick Resolution
+                        ${esm.Super Quick Resolution}
                         </a>
                      </div>
                   </div>
                </div>
                <div ng-show="data.rating==1||data.rating==2" class="feedback">
-                  <p style="text-align:center"><b>${Give a Feedback}</b></p>
+                  <p style="text-align:center"><b>${esm.Give a Feedback}</b></p>
                   <div class="row compliment">
                      <div class="comp col-md-3" id="Professionalism">
                         <a ng-click="getFeedback('Professionalism')" href="">
                         <img src="feedbackIcon2.jpg">
-                        Professionalism
+                        ${esm.Professionalism}
                         </a>
                      </div>
                      <div class="comp col-md-3" id="Overall Service Improvement">
                         <a ng-click="getFeedback('Overall Service Improvement')" href="">
                         <img src="feedbackIcon5.jpg">
-                        Overall Service Improvement
+                        ${esm.Overall Service Improvement}
                         </a>
                      </div>
                      <div class="comp col-md-3" id="Communication">
                         <a ng-click="getFeedback('Communication')" href="">
                         <img src="feedbackIcon6.jpg">
-                        Communication
+                        ${esm.Communication}
                         </a>
                      </div>
                      <div class="comp col-md-3" id="Response Time">
                         <a ng-click="getFeedback('Response Time')" href="">
                         <img src="feedbackIcon7.jpg">
-                        Response Time
+                        ${esm.Response Time}
                         </a>
                      </div>
                   </div>
@@ -588,7 +607,7 @@ a{
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
             </button> 
             <br><br>
-            <div class="alert alert-warning" style="margin-top: .5em">There are no recently closed tickets to provide feedback</div>
+            <div class="alert alert-warning" style="margin-top: .5em">${esm.No recent tickets}</div>
          </div>
       </div>
    </div>
@@ -604,13 +623,13 @@ a{
             <br><br>
             <div ng-show="data.response && !data.portalFeedback" class="alert alert-warning" style="margin-top: .5em">{{::data.response}}</div>
             <br>
-            <p ng-show="!data.portalFeedback" ng-style="myStyle" >${Would you recommend using Self Service Portal?} 
+            <p ng-show="!data.portalFeedback" ng-style="myStyle" >${esm.portal recommendation} 
                <br>
                <i class="fa fa-thumbs-up" aria-hidden="true" ng-click="portalFeedback('yes')"></i>&nbsp;&nbsp;&nbsp;
                <i class="fa fa-thumbs-down" aria-hidden="true" ng-click="portalFeedback('no')"></i>
             </p>
             <div ng-show="data.portalFeedback" class="alert alert-warning" style="margin-top: .5em">
-               Thank you for the portal feedback.
+               ${esm.Thank you for the portal feedback.}
             </div>
          </div>
       </div>

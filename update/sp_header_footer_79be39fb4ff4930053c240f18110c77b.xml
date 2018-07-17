@@ -172,14 +172,13 @@ li{
   margin-top:-10px;
 }
 .nav1 ul li a{
-  //color:#bdbaba;
-  color:black;
+  color:#ffffff;
   font-size: 14px;
     font-weight: 600;
  }
 
 .nav1 ul li a:hover{
- color:black; 
+ color:#ffffff; 
   background-color:transparent;
    cursor:hand;
 }
@@ -189,6 +188,10 @@ li{
     color: #717171 !important;
 }
 
+li img{
+  margin-top : -4px;
+  margin-right : 4px;
+}
 /*************************************Top News Scroller *********************************/
 .page-heading #scrollNews{
   background-color : #ffffff;
@@ -307,7 +310,7 @@ margin: 0px;
 
 	.navbar-minimal.open &gt; .navbar-toggler,
 	.navbar-minimal &gt; .navbar-toggler:hover {
-    background-color:rgb(0,128,0);
+    background-color:#00838F;
 	}
 
 	.navbar-minimal &gt; .navbar-toggler &gt; span {
@@ -366,7 +369,7 @@ margin: 0px;
 		border-bottom-width: 0px;
 	}
 	.navbar-minimal &gt; .navbar-menu &gt; li &gt; a:hover {
-    background-color:rgb(0,128,0)
+    background-color:#00838F;
 	}
 	.navbar-minimal &gt; .navbar-menu &gt; li &gt; a &gt; .glyphicon {
 		float: right;
@@ -386,7 +389,7 @@ margin: 0px;
 	}
 
 	.navbar-minimal.open &gt; .navbar-menu {
-		top: 60px;
+		top: 163%;
 		width: 100%;
 		min-height: 100%;
 	}
@@ -399,6 +402,7 @@ margin: 0px;
 			overflow: visible;
 		}
 		.navbar-minimal &gt; .navbar-menu &gt; li &gt; a &gt; .desc {
+      width : 140px;
 			position: absolute;
 			display: inline-block;
 			top: 50%;
@@ -409,7 +413,7 @@ margin: 0px;
 			white-space: nowrap;
 			padding: 20px 13px;
 			border-width: 0px !important;
-			background-color: rgb(0,128,0);
+			background-color: #00838F;
 			opacity: 0;
 		}
 		.navbar-minimal &gt; .navbar-menu &gt; li &gt; a &gt; .desc:after {
@@ -526,11 +530,10 @@ userRec.query();
 
 while(userRec.next()){
 	data.bgNumber = userRec.getDisplayValue('u_background_main');
-	var bg = new GlideRecord('u_main_portal_bg');
-	
+	//var bg = new GlideRecord('u_main_portal_bg');
+	var bg = new GlideRecord('x_infte_esm_servic_esm_portal_background_images');
 	if(data.bgNumber){
-		
-		bg.addQuery('u_number',data.bgNumber);
+		bg.addQuery('number',data.bgNumber);
 		bg.query();
 	
 		while(bg.next()){
@@ -557,14 +560,14 @@ while(userRec.next()){
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 06:04:03</sys_created_on>
         <sys_id>79be39fb4ff4930053c240f18110c77b</sys_id>
-        <sys_mod_count>272</sys_mod_count>
+        <sys_mod_count>298</sys_mod_count>
         <sys_name>ESM SP ESS Header</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_header_footer_79be39fb4ff4930053c240f18110c77b</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-05-10 11:00:15</sys_updated_on>
+        <sys_updated_on>2018-07-13 06:20:54</sys_updated_on>
         <template><![CDATA[<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <div ng-hide="data.pageid == 'main' ">
@@ -572,7 +575,7 @@ while(userRec.next()){
       <div class="container">
          <div class="row">
             <div class="row"  style="height:40;padding:0px">
-               <div style="background-color:white !important" class="navbar nav1"  role="navigation">
+               <div class="navbar nav1"  role="navigation">
                   <div class="navbar-header">
                      <a class="navbar-brand" ng-if="::!portal.logo" href="?id={{::portal.homepage_dv}}"><span>{{::portal.title}}</span></a>
                      <a class="navbar-brand navbar-brand-logo" ng-if="::portal.logo" href="?id={{::portal.homepage_dv}}" aria-label="${Go to homepage}">
@@ -592,22 +595,23 @@ while(userRec.next()){
                         <li><a href ng-click="::openLogin()">${Login}</a></li>
                      </ul>
                      <ul ng-if="::user.logged_in" class="nav navbar-nav" aria-haspopup="true" data-toggle="dropdown">
-                       <li><a style="margin-top:-5px;" href="?id=ess"><img src="home_esm.png" height=20 width=25  /></a></li>
-                        <li  ng-show="data.pageid == 'ess' || data.pageid==null " ng-click="guidedTour()"><a style="margin-top:-5px;" href="#"><img src="portal_guide_image.png" height=20 width=25/></a></li>
+                       <li><a href="?id=ess"><img src="home_esm.png" height=14 width=14  /><span>${esm.Home}</span></a></li>
+                        <li  ng-show="data.pageid == 'ess' || data.pageid==null " ng-click="guidedTour()"><a href="#">
+                          <img src="portal_guide_image.png" height=20 width=20 /><span>${esm.Guided Tour}</span></a></li>
                         <!-----Requests --->
                         <li class="hidden-xs dropdown" id="esm-request">
                            <a href class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="profile-dropdown" role="button" aria-haspopup="true">
-                           <span class="visible-lg-inline"> My Requests</span>
+                           <span class="visible-lg-inline"> ${esm.My Requests}</span>
                            </a>
                            <ul class="dropdown-menu" role="menu">
-                              <li role="presentation"><a ng-href="?id=My_Request" role="menuitem">My Orders</a></li>
-                              <li role="presentation"><a href="?id=my_issues" role="menuitem">My Issues</a></li>
-                              <li role="presentation"><a href="?id=my_approval" role="menuitem">My Approvals</a></li>
+                              <li role="presentation"><a ng-href="?id=My_Request" role="menuitem">${esm.My Orders}</a></li>
+                              <li role="presentation"><a href="?id=my_issues" role="menuitem">${esm.My Issues}</a></li>
+                              <li role="presentation"><a href="?id=my_approval" role="menuitem">${esm.My Approvals}</a></li>
                            </ul>
                         </li>
                         <!-----   MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
                         <li id="esm-asset">
-                           <a target="" id="menu_cf1d82de37b22200be4bcea954990ec2" href="?id=my_asset" class="atag">My Assets&nbsp;&nbsp;</a>
+                           <a target="" id="menu_cf1d82de37b22200be4bcea954990ec2" href="?id=my_asset" class="atag">${esm.My Assets}&nbsp;&nbsp;</a>
                         </li>
                         <!-----  END OF MY ASSETS and MY DASHBOARDS HEADER ITEMS -->
                         <li style="margin-top:10px;">
@@ -637,7 +641,7 @@ while(userRec.next()){
                         </li>
                         <li ng-if="::!isViewNative" class="visible-xs-block"><a href="{{::portal.logoutUrl}}">${Logout}</a></li>
                         <li>
-                           <a style="color:white" target=""  >dummy&nbsp;&nbsp;</a>
+                           <a style="color:#5a5e5c" target=""  >dummy&nbsp;&nbsp;</a>
                         </li>
                      </ul>
                      <nav style="margin-left:50px !important" class="navbar navbar-fixed-right navbar-minimal animate" role="navigation">
@@ -647,24 +651,24 @@ while(userRec.next()){
                         <ul class="navbar-menu animate">
                            <li>
                               <a  class="animate" href="?id=main" >
-                              <span class="desc animate">Change My Persona</span>
+                              <span class="desc animate">${esm.Change My Persona}</span>
                               <img width="45" src="user_persona.png" height="30" title="change persona">
                               </a>
                            <li>
                               <a  class="animate" ng-click="openChat()" >
-                              <span class="desc animate">Live Chat</span>
+                              <span class="desc animate">${esm.Live Chat}</span>
                               <img width="35" src="livechat.png" height="30" title="Chat">
                               </a>
                            </li>
                            <li>
                               <a href="?id=community" class="animate">
-                              <span class="desc animate"> Community Help </span>
+                              <span class="desc animate"> ${esm.Community Help} </span>
                               <img width="35" src="community.jpg" height="30" title="Community Help">
                               </a>
                            </li>
                            <li>
                               <a ng-click="myFunction()" ng-show="data.pageid=='ess' || data.pageid==null" class="animate">
-                              <span class="desc animate"> Submit Feedback </span>
+                              <span class="desc animate"> ${esm.Submit Feedback} </span>
                               <img width="35" src="feeback.jpg" height="30" title="Feedback"  >
                               </a>
                            </li>

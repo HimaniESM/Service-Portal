@@ -2,6 +2,12 @@
 <database>
     <element label="ESM Guided Tour" max_length="40" name="x_infte_esm_servic_esm_guided_tour" type="collection">
         <element label="Content" mandatory="true" max_length="500" name="u_content" type="string"/>
+        <element choice="1" dynamic_default_value="2019-07-15 15:59:27" label="Langauge" max_length="40" name="u_language" type="choice">
+            <choice>
+                <element label="English" value="en"/>
+                <element label="French" value="fr"/>
+            </choice>
+        </element>
         <element label="Order" mandatory="true" max_length="50" name="u_order" type="integer"/>
         <element choice="1" label="Placement" mandatory="true" max_length="40" name="u_placement" type="choice">
             <choice>

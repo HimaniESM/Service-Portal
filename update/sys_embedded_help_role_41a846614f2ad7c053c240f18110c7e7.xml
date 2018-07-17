@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_infte_esm_servic.esm_portal_background_images_user" name="x_infte_esm_servic.esm_portal_background_images_user">49a846614f2ad7c053c240f18110c7e3</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-06-07 06:49:51</sys_created_on>
+        <sys_id>41a846614f2ad7c053c240f18110c7e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>49a846614f2ad7c053c240f18110c7e3</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_embedded_help_role_41a846614f2ad7c053c240f18110c7e7</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-06-07 06:49:51</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

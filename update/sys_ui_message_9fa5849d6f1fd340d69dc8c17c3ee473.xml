@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application/>
+        <key>esm.Feedback Form</key>
+        <language>en</language>
+        <message>Feedback Form</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-07-13 09:26:22</sys_created_on>
+        <sys_id>9fa5849d6f1fd340d69dc8c17c3ee473</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>esm.Feedback Form</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_ui_message_9fa5849d6f1fd340d69dc8c17c3ee473</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-07-13 09:26:22</sys_updated_on>
+    </sys_ui_message>
+</record_update>
