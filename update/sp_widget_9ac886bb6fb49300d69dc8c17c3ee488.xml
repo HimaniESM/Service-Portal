@@ -71,7 +71,7 @@ h4{
 
 /***************************** Persona **********/
 .column-content {
-    background-color: rgba(0,0,0,0.6); 	 
+    background-color: rgba(0,0,0,0.9); 	 
     height: 240px;
     padding: 20px 20px 0 25px;
     border-bottom-right-radius: 5px;
@@ -168,14 +168,14 @@ a{
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 06:48:05</sys_created_on>
         <sys_id>9ac886bb6fb49300d69dc8c17c3ee488</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>ESM Request Services Widget</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_widget_9ac886bb6fb49300d69dc8c17c3ee488</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-07-13 05:46:32</sys_updated_on>
+        <sys_updated_on>2018-08-02 11:06:01</sys_updated_on>
         <template><![CDATA[<div class=" home-content" id="esm-service-request">
    <div class=" column-home ">
       <div class="whole-tile">

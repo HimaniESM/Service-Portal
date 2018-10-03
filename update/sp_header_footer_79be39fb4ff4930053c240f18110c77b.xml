@@ -132,18 +132,18 @@ body {
 }
 
 	
-.page-heading, .page-heading-contact {
+.page-heading {
   width : 100%;
 }
 
- menu, dir {
+/* menu, dir {
     display: block;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     -webkit-padding-start: 40px;
-}
+}*/
 
 li{
   font-family: calibri;
@@ -571,14 +571,14 @@ while(userRec.next()){
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 06:04:03</sys_created_on>
         <sys_id>79be39fb4ff4930053c240f18110c77b</sys_id>
-        <sys_mod_count>312</sys_mod_count>
+        <sys_mod_count>317</sys_mod_count>
         <sys_name>ESM SP ESS Header</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_header_footer_79be39fb4ff4930053c240f18110c77b</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-07-19 13:39:35</sys_updated_on>
+        <sys_updated_on>2018-08-02 05:31:08</sys_updated_on>
         <template><![CDATA[<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <div ng-hide="data.pageid == 'main' ">
@@ -659,7 +659,7 @@ while(userRec.next()){
                            <li>
                               <a  class="animate" href="?id=main" >
                               <span class="desc animate">${esm.Change My Persona}</span>
-                              <img width="45" src="user_persona.png" height="30" title="change persona">
+                              <img width="35" src="user_persona.png" height="30" title="change persona">
                               </a>
                            <li>
                               <a  class="animate" ng-click="openChat()" >
